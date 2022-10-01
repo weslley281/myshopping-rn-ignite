@@ -1,3 +1,15 @@
 firebase emulators:start --only firestore --project myshopping-2a2ec
 cd android && ./gradlew signinReport
 npm install -g expo-cli
+
+id "com.google.gms.google-services"
+
+apply plugin: "com.google.gms.google-services"
+dependencies{
+    implementation platform('com.google.firebase:firebase-bom:30.4.1')
+    implementation 'com.google.firebase:firebase-analytics'
+}
+
+dependencies{
+    classpath('com.google.gms:google-services:4.3.13')
+}
